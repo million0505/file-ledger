@@ -1,0 +1,19 @@
+[package]
+name = "file-ledger"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Read-only folder inventories, SHA-256 duplicate reports, and snapshot verification"
+repository = "https://github.com/million0505/file-ledger"
+
+[dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.154"
+sha2 = "=0.10.9"
+
+[dev-dependencies]
+tempfile = "=3.27.0"
+
+[profile.release]
+lto = "thin"
+strip = true
